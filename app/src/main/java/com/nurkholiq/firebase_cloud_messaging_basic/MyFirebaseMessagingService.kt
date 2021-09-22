@@ -9,6 +9,7 @@ import android.os.Build
 import android.widget.RemoteViews
 import androidx.core.app.NotificationCompat
 import com.google.firebase.messaging.FirebaseMessagingService
+import com.google.firebase.messaging.RemoteMessage
 
 const val channelId = "notification_channel"
 const val channelName = "com.nurkholiq.firebase_cloud_messaging_basic"
@@ -18,6 +19,14 @@ class MyFirebaseMessagingService : FirebaseMessagingService() {
     // generate the notification
     // attach the notification created with the custom layout
     // show the notification
+
+    override fun onMessageReceived(remoteMessage: RemoteMessage) {
+
+        if (remoteMessage.getNotification() != null){
+            generateNotification(remoteMessage.notification!!.title!!,remoteMessage.notification!!.body!!)
+        }
+
+    }
 
     fun getRemoteView(title: String, message: String): RemoteViews {
         val remoteView =
