@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Firebase-Cloud-Messaging-Basic</string>
+    <string name="one_piece">One Piece</string>
+    <string name="description">Episode one piece akan rilis setiap hari minggu</string>
 </resources>
